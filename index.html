@@ -25,6 +25,7 @@
     </header>
 
     <main>
+        <a id="button"></a>
         <div class="main_welcome">
             <h1>WELCOME ON <span class="mycompany">MYCOMPANY</span></h1>
 
@@ -229,5 +230,25 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+
+            var btn = $('#button');
+
+            $(window).scroll(function() {     
+                if ($(window).scrollTop() > 600) {
+                    btn.addClass('show');
+                } else {
+                    btn.removeClass('show');
+                }
+            });
+
+            btn.on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({scrollTop:0}, '800');
+            });
+        });
+    </script>
 </body>
 </html>
